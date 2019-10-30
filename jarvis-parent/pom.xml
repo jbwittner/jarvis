@@ -23,28 +23,8 @@
         <application.name>Jarvis</application.name>
         <application.service>Parent</application.service>
         <!-- Properties to set for the new service -->
-        <application.gitlabid>14489382</application.gitlabid>
-        <!-- Properties to set for the new service -->
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.com/api/v4/projects/${application.gitlabid}/packages/maven</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.com/api/v4/projects/${application.gitlabid}/packages/maven</url>
-        </repository>
-        <snapshotRepository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.com/api/v4/projects/${application.gitlabid}/packages/maven</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
