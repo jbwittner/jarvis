@@ -1,8 +1,8 @@
 ---
 name: Feature
 about: New feature
-title: ''
-labels: ''
+title: "[FEATURE] - "
+labels: feature
 assignees: ''
 
 ---
