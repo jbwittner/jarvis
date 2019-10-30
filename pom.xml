@@ -21,9 +21,4 @@
         <application.service>System</application.service>
     </properties>
 
-    <modules>
-        <module>jarvis-configuration</module>
-        <module>jarvis-user</module>
-    </modules>
-
 </project>
