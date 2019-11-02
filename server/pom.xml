@@ -5,38 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.jarvis</groupId>
-    <artifactId>jarvis-parent</artifactId>
+    <artifactId>jarvis-server</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${application.name} - ${application.service}</name>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
-        <relativePath/>
+        <groupId>fr.jarvis</groupId>
+        <artifactId>jarvis</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>
         <java.version>11</java.version>
         <application.name>Jarvis</application.name>
-        <application.service>Parent</application.service>
-        <!-- Properties to set for the new service -->
-        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <application.service>Server</application.service>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <reporting>
         <plugins>
@@ -57,11 +43,6 @@
     </reporting>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
