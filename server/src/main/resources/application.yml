@@ -1,0 +1,22 @@
+Application:
+  db-param:
+    host: xxx.xxx.xxx.xxx
+    port: 3306
+    db-name: jarvis
+    user: jarvis_user
+    password: xxxx
+
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform=org:
+      hibernate:
+        dialect: MySQLDialect
+  datasource:
+    url: jdbc:mysql://${application.db-param.host}:${application.db-param.port}/${application.db-param.db-name}
+    databaseName: ${application.db-param.db-name}
+    username: ${application.db-param.user}
+    password: ${application.db-param.password}
+    driverClassName: com.mysql.cj.jdbc.Driver
