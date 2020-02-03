@@ -1,19 +1,19 @@
 Application:
   db-param:
-    host: xxx.xxx.xxx.xxx
+    host: 192.168.1.40
     port: 3306
     db-name: jarvis
     user: jarvis_user
-    password: xxxx
+    password: jarvis_password
 
 spring:
   jpa:
+    database-platform : org.hibernate.dialect.MySQLDialect
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    database-platform=org:
-      hibernate:
-        dialect: MySQLDialect
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
   datasource:
     url: jdbc:mysql://${application.db-param.host}:${application.db-param.port}/${application.db-param.db-name}
     databaseName: ${application.db-param.db-name}
