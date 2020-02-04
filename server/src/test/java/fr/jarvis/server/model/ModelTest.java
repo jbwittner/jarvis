@@ -9,6 +9,9 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Mother class to test models
+ */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
@@ -17,11 +20,17 @@ public class ModelTest {
 
     protected TestObjectFactory factory;
 
+    /**
+     * Initialisation method
+     */
     @BeforeEach
     public void init(){
         factory = new TestObjectFactory();
     }
 
+    /**
+     * Method used to reset
+     */
     @AfterEach
     public void reset(){
         this.factory.resetListString();
