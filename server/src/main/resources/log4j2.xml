@@ -11,7 +11,7 @@
         </RollingFile>
         <RollingFile name="JSONRollingFile" fileName="logs/jarvis_json.log"
                      filePattern="logs/$${date:yyyy-MM}/jarvis_%d{MM-dd-yyyy}_%d{HH-mm}_json_%i.log">
-            <JSONLayout complete="true" compact="true"/>
+            <JSONLayout complete="true" compact="false"/>
             <Policies>
                 <TimeBasedTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="250 MB"/>
