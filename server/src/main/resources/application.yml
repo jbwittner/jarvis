@@ -6,6 +6,14 @@ Application:
     user: jarvis_user
     password: jarvis_password
 
+logging:
+  level:
+    fr.jarvis.server.ServerApplication: DEBUG
+    org:
+      apache: DEBUG
+      springframework:
+        data: DEBUG
+
 spring:
   jpa:
     database-platform : org.hibernate.dialect.MySQLDialect
