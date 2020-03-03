@@ -42,6 +42,13 @@ public class CreationDeviceModelTest extends ModelTest {
     public void createDeviceOk(){
         final Device device = new Device(this.factory.getRandomAsciiString(TestObjectFactory.LENGTH_DEVICE_SERIAL), this.deviceType);
         deviceRepository.save(device);
+
+        Device deviceSaved = deviceRepository.findBySerial(device.getSerial());
+
+        device.equals(deviceSaved);
+
+        Assertions.assertEquals(device, deviceSaved);
+        
     }
 
     /**
