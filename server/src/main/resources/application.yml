@@ -8,7 +8,8 @@ Application:
 
 logging:
   level:
-    fr.jarvis.server.ServerApplication: DEBUG
+    fr.jarvis.server.aop.interceptor: 
+      RepositoriesInterceptor: INFO
     org:
       apache: DEBUG
       springframework:
