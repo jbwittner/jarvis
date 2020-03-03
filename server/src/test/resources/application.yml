@@ -6,6 +6,11 @@ Application:
     user: jarvis_user
     password: jarvis_password
 
+logging:
+  level:
+    fr.jarvis.server.aop.interceptor: 
+      RepositoriesInterceptor: INFO
+
 spring:
   jpa:
     show-sql: false
