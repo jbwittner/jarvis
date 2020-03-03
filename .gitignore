@@ -277,6 +277,7 @@ buildNumber.properties
 .flattened-pom.xml
 
 ### VisualStudioCode ###
+.settings
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -314,3 +315,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/git,java,linux,maven,windows,java-web,intellij,code-java,intellij+all,intellij+iml,visualstudiocode
+
+
+.factorypath
