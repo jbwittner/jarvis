@@ -25,6 +25,11 @@ public class CreationDeviceTypeModelTest extends ModelTest {
         final DeviceType deviceType = factory.createRandomDeviceType();
 
         deviceTypeRepository.save(deviceType);
+
+        final DeviceType deviceTypeSaved = deviceTypeRepository.findByType(deviceType.getType());
+
+        Assertions.assertEquals(deviceType, deviceTypeSaved);
+
     }
 
     /**
