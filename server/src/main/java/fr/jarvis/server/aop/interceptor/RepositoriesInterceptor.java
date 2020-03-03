@@ -13,31 +13,14 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class RepositoriesInterceptor {
+public class RepositoriesInterceptor extends GeneralInterceptor {
 
     Logger logger = LoggerFactory.getLogger(RepositoriesInterceptor.class);
 
     @Around("execution(* fr.jarvis.server.repositories.*.*(..))")
-    public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
-        final long start = System.currentTimeMillis();
+    public Object logInterceptor(ProceedingJoinPoint joinPoint) throws Throwable {
 
-        String method = joinPoint.getSignature().getDeclaringTypeName();
-        method += "." + joinPoint.getSignature().getName();
-
-        logger.info("ENTERING :: " + method);
-
-        List<Object> list = Arrays.asList(joinPoint.getArgs());
-        Iterator<Object> iterator =  list.iterator();
-
-        while(iterator.hasNext()){
-            Object object = iterator.next();
-            logger.debug("Args list :: " + method + " :: " + object.toString());
-        }
-        final Object proceed = joinPoint.proceed();
-
-        final long executionTime = System.currentTimeMillis() - start;
-
-        logger.info("EXITING :: " + method + " executed in " + executionTime + "ms");
+        final Object proceed = this.logExecutionTime(joinPoint, this.logger);
 
         return proceed;
     }
